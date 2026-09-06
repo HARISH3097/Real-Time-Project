@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Real-Time Clock</title>
+
+  <!-- ============================================
+       Project: Real-Time Clock Webpage
+       Developer: Harishkumar
+       Description: A live-updating clock built with
+                    HTML, CSS, and JavaScript.
+       ============================================ -->
+
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: #1e1e2f;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    #clock {
+      color: #00ffcc;
+      font-size: 4rem;
+      letter-spacing: 4px;
+    }
+    #date {
+      color: #cccccc;
+      font-size: 1.2rem;
+      text-align: center;
+    }
+    .wrapper {
+      text-align: center;
+    }
+    #credit {
+      color: #888;
+      font-size: 0.9rem;
+      margin-top: 20px;
+      letter-spacing: 1px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div id="clock">00:00:00</div>
+    <div id="date"></div>
+    <div id="credit">Developed by Harishkumar</div>
+  </div>
+
+  <script>
+    // Developer: Harishkumar
+    function updateClock() {
+      const now = new Date();
+      const time = now.toLocaleTimeString();
+      const date = now.toDateString();
+      document.getElementById('clock').textContent = time;
+      document.getElementById('date').textContent = date;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
+</body>
+</html>
